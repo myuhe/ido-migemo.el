@@ -1,0 +1,32 @@
+* ido-migemo
+ =ido-migemo= is migemo plugin for =ido-mode= .
+ =ido-migemo= enables Japanese increment search with 'Romanization of Japanese' on ido.
+* Demo
+  [[./image/demo.gif]]
+* Requirements
+
+- [[https://github.com/emacs-jp/migemo][emacs-jp/migemo]]
+
+* Usage
+** =ido-migemo-mode=
+   =ido-migemo-mode= is minor mode for Japanese increment search using  =migemo= .
+   this command toggles the mode. Non-null prefix argument turns on the mode. Null prefix argument turns off the mode.
+
+   When this minor mode is enabled, enables Japanese increment search using  =migemo=
+
+* Customize
+** =ido-migemo-exclude-command=
+   List of commands that =ido-migemo= ignores.
+   If non-nil, migemo ignores those commands.
+
+** =ido-migemo-prompt-string=
+   String to display in the Ido Migemo prompt. Default value is  =[migemo] =.
+
+* Setting Example
+#+begin_src elisp
+(require 'ido-migemo-mode)
+(ido-mode 1)
+(ido-migemo-mode 1)
+(setq ido-migemo-exclude-command '(smex ido-switch-buffer)
+      ido-migemo-prompt-string "Migemo|")
+#+end_src
