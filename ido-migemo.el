@@ -45,7 +45,7 @@
   :tag "ido migemo"
   :group 'migemo)
 
-(defcustom ido-migemo-exclude-command '(smex)
+(defcustom ido-migemo-exclude-command-list '(smex)
   "List of commands that ido-migemo ignores. If non-nil, migemo ignores those commands."
   :group 'ido-migemo
   :type '(repeat  (function :tag "exclude command")))
@@ -95,7 +95,7 @@
   (when (eq ido-migemo-this-command nil)
     (setq ido-migemo-this-command  this-command))
   (if (not (memq ido-migemo-this-command
-                 ido-migemo-exclude-command))
+                 ido-migemo-exclude-command-list))
       (let* ((ido-enable-regexp nil)
              (case-fold-search   ido-case-fold)
              (slash (and (not ido-enable-prefix) (ido-final-slash ido-text)))
@@ -202,14 +202,14 @@
   (remove-hook 'minibuffer-exit-hook 'ido-migemo-cleanup-command))
 
 (defun ido-migemo-set-prompt ()
-  (unless (memq this-command ido-migemo-exclude-command)
+  (unless (memq this-command ido-migemo-exclude-command-list)
     (let ((inhibit-read-only t)
           (pos (point)))
       (put-text-property (point-min) (length ido-migemo-prompt-string) 'face 'success))))
 
 (defadvice ido-make-prompt (after prefix-ido-make-prompt)
   "Add prompt to ido."
-  (unless (memq this-command ido-migemo-exclude-command)
+  (unless (memq this-command ido-migemo-exclude-command-list)
   (setq ad-return-value (concat ido-migemo-prompt-string ad-return-value ))))
 
 ;;;###autoload
