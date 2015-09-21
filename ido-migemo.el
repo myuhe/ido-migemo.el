@@ -31,6 +31,8 @@
 ;; Add to .emacs:
 ;; (require 'ido-migemo)
 ;;
+;; In detail, Read my introduced Article.
+;; `http://sheephead.homelinux.org/2015/09/14/7329/'
 ;;
 ;;; Changelog:
 ;; 2015-09-12 Initial release.

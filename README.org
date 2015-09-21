@@ -30,3 +30,5 @@
 (setq ido-migemo-exclude-command '(smex ido-switch-buffer)
       ido-migemo-prompt-string "Migemo|")
 #+end_src
+* Related Article
+  [[http://sheephead.homelinux.org/2015/09/14/7329/][ido-modeでmigemoれる ido-migemo.el作りました - sheephead]]
