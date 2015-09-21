@@ -1,3 +1,5 @@
+[[https://melpa.org/#/ido-migemo][file:https://melpa.org/packages/ido-migemo-badge.svg]]
+
 * ido-migemo
  =ido-migemo= is migemo plugin for =ido-mode= .
  =ido-migemo= enables Japanese increment search with 'Romanization of Japanese' on ido.
